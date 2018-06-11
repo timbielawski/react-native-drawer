@@ -280,6 +280,7 @@ export default class Drawer extends Component {
     let length = this._prevLength + delta
     length = Math.min(length, this.getOpenLength())
     length = Math.max(length, this.getClosedLength())
+    length = Math.round(length*2)/2	  
     this._length = length
 
     this.updatePosition()
@@ -397,6 +398,7 @@ export default class Drawer extends Component {
       duration: this.props.tweenDuration,
       easingType: this.props.tweenEasing,
       onFrame: (tweenValue) => {
+	this._length = Math.round(tweenValue*2)/2;
         this._length = tweenValue
         this.updatePosition()
       },
@@ -431,6 +433,7 @@ export default class Drawer extends Component {
       easingType: this.props.tweenEasing,
       duration: this.props.tweenDuration,
       onFrame: (tweenValue) => {
+	this._length = Math.round(tweenValue*2)/2;
         this._length = tweenValue
         this.updatePosition()
       },
