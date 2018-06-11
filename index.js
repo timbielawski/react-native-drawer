@@ -399,7 +399,6 @@ export default class Drawer extends Component {
       easingType: this.props.tweenEasing,
       onFrame: (tweenValue) => {
 	this._length = Math.round(tweenValue*2)/2;
-        this._length = tweenValue
         this.updatePosition()
       },
       onEnd: () => {
@@ -433,8 +432,7 @@ export default class Drawer extends Component {
       easingType: this.props.tweenEasing,
       duration: this.props.tweenDuration,
       onFrame: (tweenValue) => {
-	this._length = Math.round(tweenValue*2)/2;
-        this._length = tweenValue
+	this._length = Math.round(tweenValue*2)/2
         this.updatePosition()
       },
       onEnd: () => {
